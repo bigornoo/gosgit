@@ -1,0 +1,12 @@
+version: '2'
+services:
+  gogs:
+    image: gogs/gogs:latest
+    restart: always
+    ports:
+      - "12000:22"
+      - "3000:3000"
+    environment:
+      - "RUN_CROND=true"
+    volumes:
+      - /share/containers/volumes/gogsit:/data
